@@ -25,7 +25,7 @@ pipelines:
       - name: S_PS_PromoteBuild_6187_003_1
         type: GoBuild
         configuration:
-          nodePool: win_2019
+          nodePool: pipelines_w19
           inputResources:
             - name: S_PS_PB_6187_003_GitRepo
           integrations:
@@ -38,7 +38,7 @@ pipelines:
       - name: S_PS_PromoteBuild_6187_003_2
         type: GoPublishBinary
         configuration:
-          nodePool: win_2019
+          nodePool: pipelines_w19
           inputSteps:
             - name: S_PS_PromoteBuild_6187_003_1
           outputResources:
@@ -48,7 +48,7 @@ pipelines:
       - name: S_PS_PromoteBuild_6187_003_3
         type: PromoteBuild
         configuration:
-          nodePool: win_2019
+          nodePool: pipelines_w19
           targetRepository: test-automation-generic-promoted-local
           failOnValidate: true
           inputResources:
